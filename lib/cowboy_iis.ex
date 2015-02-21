@@ -1,0 +1,2 @@
+defmodule CowboyIis do
+end
