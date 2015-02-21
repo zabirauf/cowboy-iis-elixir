@@ -1,4 +1,4 @@
-defmodule CowboyIis.Mixfile do
+defmodule CowboyIIS.Mixfile do
   use Mix.Project
 
   def project do
@@ -12,7 +12,10 @@ defmodule CowboyIis.Mixfile do
   #
   # Type `mix help compile.app` for more information
   def application do
-    [applications: [:logger]]
+    [
+      mod: {CowboyIIS, []},
+      applications: [:logger, :cowboy, :ranch]
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -25,6 +28,8 @@ defmodule CowboyIis.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    []
+    [
+      {:cowboy, "1.0.0"},
+    ]
   end
 end
